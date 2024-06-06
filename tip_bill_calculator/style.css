@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  width: 30%;
+  height: 70%;
+  box-shadow: 2px 7px 14px 0px rgba(0, 0, 0, 1);
+  border-radius: 0.5em;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to left top,
+    rgb(174, 200, 248),
+    rgb(47, 197, 47)
+  );
+  border-radius: 0.5em 0.5em 0 0;
+  color: white;
+  height: 30%;
+}
+.title h2 {
+  font-size: 0.8em;
+}
+.calc__container {
+  display: flex;
+  height: 70%;
+  margin: 0 1em;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.input__form {
+  width: 100%;
+  outline: 0;
+  border: 1px solid rgb(218, 218, 218);
+  font-size: 0.8em;
+  padding: 0.4em;
+}
+#tip {
+  padding: 0.4em;
+  border-radius: 0.5em;
+  outline: 0;
+  border: 1px solid rgb(218, 218, 218);
+}
+.calc__container button {
+  color: white;
+  text-align: center;
+  width: 40%;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 0.5em;
+  background-image: linear-gradient(
+    to left top,
+    rgb(174, 200, 248),
+    rgb(47, 197, 47)
+  );
+  cursor: pointer;
+  padding: 1em 1em;
+  box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 1);
+  transition: 0.4s;
+}
+.calc__container button:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 8px 5px 3px rgba(0, 0, 0, 0.726);
+}
+.error__message,
+.message {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.error__message {
+  color: red;
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .container {
+    width: 50%;
+    height: 70%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .container {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip And Bill Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>BILLSPLITTER</h1>
+        <h2>SHARE THE BILL WITH YOUR FRIENDS :]</h2>
+      </div>
+      <div class="calc__container">
+        <label for="price">Price:</label>
+        <input id="price" class="input__form" type="number" min="0" />
+
+        <label for="people">People:</label>
+        <input id="people" class="input__form" type="number" min="1" />
+
+        <label for="tip">Tip:</label>
+        <select name="tip" id="tip">
+          <option value="0" disabled selected>- Choose tip -</option>
+          <option value="0.05">5%</option>
+          <option value="0.10">10%</option>
+          <option value="0.15">15%</option>
+          <option value="0.20">20%</option>
+        </select>
+
+        <button class="calc__btn">Calc Tip</button>
+
+        <p class="error__message"></p>
+        <p class="message"></p>
+      </div>
+    </div>
+  </body>
+</html>
