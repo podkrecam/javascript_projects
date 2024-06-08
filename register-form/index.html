@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="popup hidden">
+      <div>
+        <h1>Success!</h1>
+        <p>Your account has been successfully created!</p>
+      </div>
+      <button class="close__btn btn">Close</button>
+    </div>
+    <div class="container">
+      <div class="top">
+        <h1>Register!</h1>
+      </div>
+      <form class="form">
+        <div class="form__container">
+          <label for="username">Name:</label>
+          <input
+            type="text"
+            class="form__input"
+            id="username"
+            placeholder="Type your name"
+            required
+          />
+          <p class="error__message error__username"></p>
+        </div>
+        <div class="form__container">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            class="form__input"
+            id="password"
+            placeholder="Type password"
+            required
+          />
+          <p class="error__message error__password"></p>
+        </div>
+        <div class="form__container">
+          <label for="password-confirm">Confirm password:</label>
+          <input
+            type="password"
+            class="form__input"
+            id="password-confirm"
+            placeholder="Repeat password"
+            required
+          />
+          <p class="error__message error__password_confirm"></p>
+        </div>
+        <div class="form__container">
+          <label for="email">E-mail address:</label>
+          <input
+            type="email"
+            class="form__input"
+            id="email"
+            placeholder="Type your e-mail address"
+            required
+          />
+          <p class="error__message error__email"></p>
+        </div>
+        <div class="button__container">
+          <button class="clear__btn btn">Clear</button>
+          <button class="register__btn btn">Register</button>
+        </div>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>
