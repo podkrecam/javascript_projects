@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* COMMON STYLES */
+body {
+  background-color: rgb(34, 34, 34);
+  color: white;
+
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* BTN STYLES */
+.game__btn {
+  cursor: pointer;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: bold;
+  font-size: 1rem;
+  color: black;
+  background: white;
+  border: none;
+
+  height: 50px;
+  width: 150px;
+
+  transition: 0.2s;
+}
+.game__btn:active {
+  transform: scale(0.95);
+}
+
+.game__btn:hover {
+  background: rgb(204, 204, 204);
+  border: 2px solid red;
+}
+
+/* MAIN CONTAINER */
+.game {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* HEADER SECTION*/
+.game__header {
+  height: 40vh;
+  border-bottom: 10px solid white;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 2rem;
+  padding: 1rem;
+
+  position: relative;
+}
+
+.game__info {
+  display: flex;
+  justify-content: end;
+}
+
+.game__title {
+  grid-column: 1 / -1;
+  margin: auto;
+  font-size: 2.5rem;
+}
+
+.game__result {
+  bottom: -55px;
+  color: black;
+  background-color: white;
+  font-size: 3rem;
+
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GAME PLAY SECTION */
+.game__play {
+  flex-grow: 1;
+  display: flex;
+}
+
+.game__check,
+.game__scores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.game__check {
+  width: 50%;
+  align-items: center;
+}
+
+.game__input {
+  color: white;
+  background-color: rgb(34, 34, 34);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  text-align: center;
+  outline: none;
+}
+
+.game__scores {
+  flex-grow: 1;
+  font-size: 1.5rem;
+  align-items: start;
+}
+
+.game__feedback {
+  margin-bottom: 3rem;
+}
+
+/* GAME FOOTER SECTION*/
+.game__footer {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ANIMATIONS */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.game__input-shake {
+  animation: shake 0.5s;
+}
