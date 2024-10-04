@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Modal Window</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="modal__buttons">
+        <button class="modal__btn modal__btn--show">Show Modal 1</button>
+        <button class="modal__btn modal__btn--show">Show Modal 2</button>
+        <button class="modal__btn modal__btn--show">Show Modal 3</button>
+      </section>
+      <div class="modal hidden">
+        <div class="modal__form">
+          <h1>I"m a modal window</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum in
+            adipisci beatae, nesciunt perferendis velit aliquam minus quibusdam,
+            dicta repellendus, saepe reiciendis ipsam! Porro harum possimus
+            nulla, molestias ea neque? Molestias, soluta atque sunt quos dolorum
+            vitae qui consectetur dolorem doloribus optio voluptatibus minus quo
+            voluptas a accusantium, similique omnis eius debitis tempore nihil?
+            Blanditiis laborum corrupti cumque eius quidem?
+          </p>
+          <button class="modal__btn modal__btn--close">×</button>
+        </div>
+      </div>
+      <div class="overlay hidden"></div>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
