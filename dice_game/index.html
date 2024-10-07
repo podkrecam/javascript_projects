@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Dice Game</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game">
+      <section class="game__panel">
+        <div class="game__player game__player--0">
+          <div class="game__total">
+            <h2 class="game__total--title">PLAYER 1</h2>
+            <p class="game__total--score">0</p>
+          </div>
+          <div class="game__current">
+            <h3 class="game__current--title">CURRENT</h3>
+            <p class="game__current--score">0</p>
+          </div>
+        </div>
+        <div class="game__player game__player--1">
+          <div class="game__total">
+            <h2 class="game__total--title">PLAYER 2</h2>
+            <p class="game__total--score">0</p>
+          </div>
+          <div class="game__current">
+            <h3 class="game__current--title">CURRENT</h3>
+            <p class="game__current--score">0</p>
+          </div>
+        </div>
+        <div class="game__controls">
+          <div class="game__control">
+            <button class="game__btn game__btn--new" aria-label="New game">
+              🔁 NEW GAME
+            </button>
+            <img
+              class="game__dice hidden"
+              src="./images/dice-1.png"
+              alt="dice value"
+            />
+          </div>
+          <div class="game__play">
+            <button
+              class="game__btn game__btn--roll"
+              aria-label="Roll the dice"
+            >
+              🎲 ROLL DICE
+            </button>
+            <button
+              class="game__btn game__btn--hold"
+              aria-label="Hold the score"
+            >
+              📥 HOLD
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">🎲 Made by Maciej Osial</footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
