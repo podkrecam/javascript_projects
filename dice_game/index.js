@@ -13,7 +13,7 @@ const gameMessages = document.querySelectorAll(".game__message");
 let totalScores,
   currentScore,
   activePlayer,
-  winningScore = 10;
+  winningScore = 100;
 
 // Initialize game
 const init = () => {
