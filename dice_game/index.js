@@ -8,8 +8,12 @@ const dice = document.querySelector(".game__dice");
 const playerPanels = document.querySelectorAll(".game__player");
 const totalScoreLabels = document.querySelectorAll(".game__total--score");
 const currentScoreLabels = document.querySelectorAll(".game__current--score");
+const gameMessages = document.querySelectorAll(".game__message");
 
-let totalScores, currentScore, activePlayer;
+let totalScores,
+  currentScore,
+  activePlayer,
+  winningScore = 10;
 
 // Initialize game
 const init = () => {
@@ -23,12 +27,23 @@ const init = () => {
   playerPanels.forEach((panel) => panel.classList.remove("opacity"));
   playerPanels[0].classList.add("opacity");
 
+  gameMessages.forEach((message) => {
+    message.textContent = "";
+    message.classList.remove("animation");
+  });
+
   dice.classList.add("hidden");
 
-  holdBtn.disabled = false;
-  rollBtn.disabled = false;
+  toggleButtons(false);
 };
 
+// Toggle buttons
+const toggleButtons = (isDisabled) => {
+  rollBtn.classList.toggle("hidden", isDisabled);
+  holdBtn.classList.toggle("hidden", isDisabled);
+};
+
+// Switch player
 const switchPlayer = () => {
   currentScore = 0;
   currentScoreLabels[activePlayer].textContent = currentScore;
@@ -38,50 +53,49 @@ const switchPlayer = () => {
   playerPanels[activePlayer].classList.toggle("opacity");
 };
 
+// Roll dice
 const rollDice = () => {
   const diceValue = Math.floor(Math.random() * 6) + 1;
   showDiceValue(diceValue);
-
-  if (diceValue !== 1) {
-    currentScore += diceValue;
-    currentScoreLabels[activePlayer].textContent = currentScore;
-  } else {
-    switchPlayer();
-  }
+  diceValue !== 1 ? updateCurrentScore(diceValue) : switchPlayer();
 };
 
+// Update current score
+const updateCurrentScore = (diceValue) => {
+  currentScore += diceValue;
+  currentScoreLabels[activePlayer].textContent = currentScore;
+};
+
+// Display dice value
 const showDiceValue = (value) => {
   dice.setAttribute("src", `./images/dice-${value}.png`);
   dice.classList.remove("hidden");
 };
 
+// Save total result and check for winner
 const saveTotalResult = () => {
   totalScores[activePlayer] += currentScore;
   totalScoreLabels[activePlayer].textContent = totalScores[activePlayer];
 
-  if (totalScores[activePlayer] >= 100) {
+  if (totalScores[activePlayer] >= winningScore) {
     endGame();
   } else {
     switchPlayer();
   }
 };
 
+// End game
 const endGame = () => {
-  holdBtn.disabled = true;
-  rollBtn.disabled = true;
+  toggleButtons(true);
   dice.classList.add("hidden");
+  gameMessages[activePlayer].classList.add("animation");
+  gameMessages[activePlayer].textContent = "🎉 WIN!";
 };
 
-rollBtn.addEventListener("click", (e) => {
-  rollDice();
-});
+// EVENT LISTENERS
+newGameBtn.addEventListener("click", init);
+rollBtn.addEventListener("click", rollDice);
+holdBtn.addEventListener("click", saveTotalResult);
 
-holdBtn.addEventListener("click", () => {
-  saveTotalResult();
-});
-
-newGameBtn.addEventListener("click", () => {
-  init();
-});
-
+// Start new game on load
 init();
