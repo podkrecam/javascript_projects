@@ -1,0 +1,157 @@
+:root {
+  --green: green;
+  --red: red;
+  --yellow: yellow;
+  --blue: blue;
+  --border-color: black;
+  --background: rgb(182, 178, 178);
+  --button-shadow: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--background);
+}
+
+.game {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.game__header,
+.game__play,
+.game__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game__header {
+  height: 20vh;
+  text-align: center;
+}
+
+.game__play {
+  flex-grow: 1;
+}
+
+.game__panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.game__panel-item {
+  height: 25vh;
+  width: 25vh;
+  border: 10px solid var(--border-color);
+  border-radius: 25%;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.game__panel-item:hover {
+  opacity: 1;
+}
+
+.game__panel-item:active {
+  transform: scale(0.9);
+  box-shadow: 1px 1px 10px 5px var(--button-shadow);
+}
+.game__panel-item--active {
+  opacity: 1;
+  box-shadow: 1px 1px 10px 5px var(--button-shadow);
+}
+
+.game__panel-item--green {
+  background-color: var(--green);
+}
+
+.game__panel-item--red {
+  background-color: var(--red);
+}
+
+.game__panel-item--yellow {
+  background-color: var(--yellow);
+}
+
+.game__panel-item--blue {
+  background-color: var(--blue);
+}
+
+.game__footer {
+  height: 5vh;
+  text-align: center;
+}
+
+.game__over--background {
+  background-color: red;
+}
+
+.game__over--animation {
+  animation: shake 1s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+  .game__panel-item {
+    height: 20vh;
+    width: 20vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .game {
+    margin: 2rem;
+    gap: 2rem;
+  }
+  .game__panel {
+    grid-template-columns: 1fr;
+  }
+}

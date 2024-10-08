@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Simon Game</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="game">
+      <header class="game__header">
+        <h1 class="game__status">Press A Key to Start</h1>
+      </header>
+      <main class="game__play">
+        <section class="game__panel">
+          <button
+            class="game__panel-item game__panel-item--green"
+            aria-label="Green Button"
+            data-color="green"
+          ></button>
+          <button
+            class="game__panel-item game__panel-item--red"
+            aria-label="Red Button"
+            data-color="red"
+          ></button>
+          <button
+            class="game__panel-item game__panel-item--yellow"
+            aria-label="Yellow Button"
+            data-color="yellow"
+          ></button>
+          <button
+            class="game__panel-item game__panel-item--blue"
+            aria-label="Blue Button"
+            data-color="blue"
+          ></button>
+        </section>
+      </main>
+      <footer class="game__footer">
+        <p class="game__author">🎮Made by Maciej Osial</p>
+      </footer>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
