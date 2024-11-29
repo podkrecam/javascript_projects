@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bank app using CSS, HTML, JavaScript">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Maciej Osial">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>sBank</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bank">
+      <header class="bank__header">
+        <div class="bank__user-info">
+          <img class="bank__user-info-img" src="./images/logo.svg" alt="logo" width="50px" />
+          <p class="bank__user-info-message">sBank</p>
+        </div>
+        <div class="bank__login">
+          <form class="bank__login-form">
+            <input
+              class="input bank__login-input--user"
+              type="text"
+              name="login-username"
+              id="login-username"
+              placeholder="user"
+              autocomplete="username"
+              minlength="2"
+              required
+            />
+            <input
+              class="input bank__login-input--pass"
+              type="password"
+              inputmode="numeric"
+              pattern="\d*"
+              minlength="4"
+              maxlength="4"
+              name="login-password"
+              id="login-password"
+              placeholder="PIN"
+              autocomplete="current-password"
+              required
+            />
+            <button class="button bank__login--btn" aria-label="Log in">
+              <img src="./images/login_icon.svg" alt="login" />
+            </button>
+          </form>
+          <p class="error bank__login-error"></p>
+        </div>
+      </header>
+      <main class="bank__app hidden">
+        <div class="bank__app-left">
+          <section class="bank__myaccount">
+            <div class="bank__myaccount-balance">
+              <p class="bank__balance-label">My account</p>
+              <p class="bank__balance-value">$800,74</p>
+            </div>
+            <div class="bank__myaccount-date">
+              <p class="bank__myaccount-date-now"></p>
+            </div>
+            <div class="bank__myaccount-interest">
+              <p class="bank__interest-title">Interest</p>
+              <p class="bank__interest-value">$119</p>
+            </div>
+          </section>
+          <section class="bank__actions">
+            <div class="bank__action bank__action--transfer">
+              <h1 class="bank__action-title">Transfer money</h1>
+              <form class="bank__form bank__form--transfer">
+                <input
+                  class="bank__form-input bank__form-input--to"
+                  type="text"
+                  required
+                  name="transfer-to"
+                  id="transfer-to"
+                />
+                <input
+                  class="bank__form-input bank__form-input--amount"
+                  type="number"
+                  required
+                  name="transfer-amount"
+                  id="transfer-amount"
+                />
+                <button
+                  class="button bank__form-button bank__form-button--transfer"
+                >
+                <img src="./images/arrow.svg" alt="arrow">
+              </button>
+                <label class="bank__form-label" for="transfer-to"
+                  >Transfer to</label
+                >
+                <label class="bank__form-label" for="transfer-amount"
+                  >Amount</label
+                >
+              </form>
+              <p class="error bank__action-transfer-error"></p>
+            </div>
+            <div class="bank__action bank__action--loan">
+              <h1 class="bank__action-title">Request loan</h1>
+              <form class="bank__loan-form bank__form" action="">
+                <input
+                  class="bank__form-input bank__form-input--loan"
+                  type="number"
+                  min="0"
+                  name="loan-value"
+                  id="loan-value"
+                />
+                <button
+                  class="button bank__form-button bank__form-button--loan"
+                ><img src="./images/arrow.svg" alt="arrow"></button>
+                <label class="bank__form-label" for="loan-value"
+                  >Amount
+                </label>
+              </form>
+              <p class="error bank__action-loan-error"></p>
+            </div>
+            <div class="bank__action bank__action--close-account">
+              <h1 class="bank__action-title">Close account</h1>
+              <form class="bank__close-account-form bank__form" action="">
+                <input
+                  class="bank__form-input bank__form-input--user"
+                  type="text"
+                  required
+                  name="close-user"
+                  id="close-user"
+                />
+                <input
+                  class="bank__form-input bank__form-input--pass"
+                  type="password"
+              inputmode="numeric"
+              pattern="\d*"
+              minlength="4"
+              maxlength="4"
+              required
+              name="close-pass"
+              id="close-pass"
+                />
+                <button
+                  class="button bank__form-button bank__form-button--close"
+                ><img src="./images/arrow.svg" alt="arrow"></button>
+                <label class="bank__form-label" for="close-user"
+                  >Confirm user</label
+                >
+                <label class="bank__form-label" for="close-pass"
+                  >Confirm PIN</label
+                >
+              </form>
+              <p class="error bank__action-close-error"></p>
+            </div>
+          </section>
+        </div>
+        <div class="bank__app-right">
+          <section class="bank__transactions">
+            <ul class="bank__transaction-list">
+              <li class="bank__transaction-item">
+                <p class="bank__transaction-type bank__transaction-deposit">8 deposit</p>
+                <p class="bank__transaction-date">12/03/2020</p>
+                <p class="bank__transaction-value">1300$</p>
+              </li>
+              <li class="bank__transaction-item">
+                <p class="bank__transaction-type bank__transaction-withdrawal">7 withdrawal</p>
+                <p class="bank__transaction-date">11/02/2020</p>
+                <p class="bank__transaction-value">120$</p>
+              </li>
+            </section>
+            <button
+              class="button bank__transaction--sort"
+              aria-label="Sort transactions"
+            >
+              <p>SORT</p>
+              <img src="./images/sort.svg" alt="">
+            </button>
+            <section class="bank__summary">
+              <div class="bank__summary-item">
+                <button class="button bank__summary-item-img bank__summary-item-img--incomes">
+                  <img src="./images/incomes.svg" alt="">
+                </button>
+                <div class="bank__summary-item-info">
+                  <p class="bank__summary-item-value bank__summary-item-value--incomes">$113</p>
+                  <p class="bank__summary-item-description bank__summary-item-description--incomes">
+                    Incomes
+                  </p>
+                </div>
+              </div>
+              <div class="bank__summary-item">
+                <button class="button bank__summary-item-img bank__summary-item-img--expenses">
+                  <img src="./images/expenses.svg" alt="">
+                </button>
+                <div class="bank__summary-item-info">
+                  <p class="bank__summary-item-value bank__summary-item-value--expenses">$113</p>
+                  <p class="bank__summary-item-description bank__summary-item-description--expenses">
+                    Expenses
+                  </p>
+                </div>
+              </div>
+            </section>
+        </div>
+      </main>
+      <footer class="bank__footer hidden">
+        <p class="bank__footer-author">Made by Maciej Osial</p>
+        <p class="bank__footer-time" aria-live="polite">
+          You will be logged out in 5:00
+        </p>
+      </footer>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
